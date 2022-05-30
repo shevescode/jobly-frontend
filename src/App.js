@@ -1,7 +1,20 @@
+import NavBar from "./NavBar";
+import MainPage from "./MainPage";
+import Footer from "./Footer";
+import "./App.css";
+
 function App() {
   return (
     <div className="App">
-      <h1>Hello Jobly</h1>
+        <header className="App-header">
+            <NavBar />
+        </header>
+        <main className="App-main">
+            <MainPage />
+        </main>
+        <footer className="App-footer">
+            <Footer />
+        </footer>
     </div>
   );
 }
