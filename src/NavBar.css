@@ -2,18 +2,18 @@
     background-color: #30302B;
 }
 .login-btn {
-    color: #30302B;
-    background-color: #FEC84D;
-    border-color: #30302B;
+    color: #FFFFFF;
+    background-color: #0F5190;
+    border-color: #0F5190;
     padding-right: 24px;
     padding-left: 24px;
 }
 .collapse-btn {
-    background-color: #FEC84D;
+    background-color: #FFFFFF;
 }
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 .navbar-option, .nav-link {
-    color: #FEC84D;
+    color: #FFFFFF;
 }
