@@ -1,8 +1,10 @@
+import "./Footer.css"
+
 function Footer() {
     return (
         <div className="container-fluid">
             <div className="row">
-                <h3>Wiku&Seba 2022</h3>
+                <h6 className="footer-header">© 2022 Jobly, All Rights Reserved.</h6>
             </div>
         </div>
     );

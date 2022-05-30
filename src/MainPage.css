@@ -1,3 +1,12 @@
 .create-btn {
+    color: #30302B;
+    background-color: #FEC84D;
+    border-color: #30302B;
+    padding-right: 24px;
+    padding-left: 24px;
+    font-size: 1.5rem;
+}
 
+.example-card {
+    text-align: center;
 }
