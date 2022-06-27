@@ -1,3 +1,6 @@
-.footer-header {
+.footer {
+    height: 3rem;
+    background-color: #222222;
     text-align: center;
+    color: white;
 }
