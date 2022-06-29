@@ -1,0 +1,38 @@
+.create-acc-form {
+    /*margin-top: 20rem;*/
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.create-acc-form .card {
+    min-width: 40rem;
+    min-height: 30rem;
+    background-color: #EEEEEE;
+    border: none;
+}
+
+.create-acc-form .card .field {
+    margin-bottom: 1.5rem;
+}
+
+/*@media screen and (max-width: 960px) {*/
+/*    .create-acc-form .card {*/
+/*        width: 80%;*/
+/*    }*/
+/*}*/
+/*@media screen and (max-width: 640px) {*/
+/*    .create-acc-form .card {*/
+/*        width: 100%;*/
+/*        min-width: 0;*/
+/*    }*/
+/*}*/
+
+.register-button {
+    display: block;
+    margin: 0 auto;
+    width: 6rem;
+    height: 3rem;
+}

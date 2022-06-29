@@ -1,0 +1,31 @@
+/*NAVBAR BUTTONS*/
+.nav-button {
+    padding: 7px 0;
+    margin-left: auto;
+    width: 100%;
+    background-color: #222222;
+    color: #EEEEEE;
+    border-color: #222222;
+    border-width: 0;
+    font-size: 1.5rem;
+}
+
+.nav-button:hover {
+    background-color: #1271ED;
+}
+
+.nav-button:nth-child(2n) {
+    border-left: 2px solid #EEEEEE;
+    border-right: 2px solid #EEEEEE;
+}
+
+/*MAIN CONTENT PAGE BUTTONS*/
+.create-acc-btn {
+    background-color: #222222;
+    color: #EEEEEE;
+    border-color: #222222;
+    border-width: 0;
+    font-size: 1.5rem;
+    padding: 12px 20px;
+}
+
