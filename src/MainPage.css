@@ -1,15 +1,14 @@
-.create-btn {
-    color: #FFFFFF;
-    background-color: #0F5190;
-    border-color: #0F5190;
-    padding-right: 24px;
-    padding-left: 24px;
+.create-acc-btn {
+    background-color: #222222;
+    color: #EEEEEE;
+    border-color: #222222;
+    border-width: 0;
     font-size: 1.5rem;
+    padding: 10px;
 }
 #logo {
     height: 5rem;
     width: 10rem;
-
 }
 
 .example-card {

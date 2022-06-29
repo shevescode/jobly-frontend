@@ -2,3 +2,22 @@ body {
     font-family: 'Roboto Mono', monospace;
     background-color: #EEEEEE;
 }
+
+.App {
+    height: 100vh;
+}
+
+.App-main {
+    height: calc(100vh - 7rem);
+}
+
+.App-header {
+    height: 5rem;
+
+}
+
+.App-footer {
+    height: 2rem;
+    position: fixed;
+    bottom: 0;
+}
