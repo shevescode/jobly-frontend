@@ -16,9 +16,9 @@ import {Checkbox} from 'primereact/checkbox';
 import {Dialog} from 'primereact/dialog';
 import {Divider} from 'primereact/divider';
 import {classNames} from 'primereact/utils';
-import './CreateAccountForm.css';
+import './LogInForm.css';
 
-export const CreateAccountForm = () => {
+export const LogInForm = () => {
     const [showMessage, setShowMessage] = useState(false);
     const [formData, setFormData] = useState({});
 
@@ -60,7 +60,7 @@ export const CreateAccountForm = () => {
     );
 
     return (
-        <div className="create-acc-form">
+        <div className="log-in-acc-form">
             <Dialog visible={showMessage} onHide={() => setShowMessage(false)} position="top" footer={dialogFooter}
                     showHeader={false} breakpoints={{'960px': '80vw'}} style={{width: '30vw'}}>
                 <div className="flex justify-content-center flex-column pt-6 px-3">
@@ -148,4 +148,3 @@ export const CreateAccountForm = () => {
 }
 
 const rootElement = document.getElementById("root");
-// ReactDOM.render(<CreateAccountForm/>, rootElement);
