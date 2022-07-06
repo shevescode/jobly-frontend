@@ -3,6 +3,7 @@
     padding: 7px 0;
     margin-left: auto;
     width: 100%;
+    text-align: center;
     background-color: #222222;
     color: #EEEEEE;
     border-color: #222222;
@@ -12,6 +13,7 @@
 
 .nav-link:hover {
     background-color: #1271ED;
+    color: white;
 }
 
 .nav-link:nth-child(2n) {
