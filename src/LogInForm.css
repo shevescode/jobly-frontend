@@ -3,14 +3,14 @@
     top: 50%;
 }
 
-.create-acc-form .card {
+.log-in-acc-form .card {
     min-width: 40rem;
     min-height: 30rem;
     background-color: #EEEEEE;
     border: none;
 }
 
-.create-acc-form .card .field {
+.log-in-acc-form .card .field {
     margin-bottom: 1.5rem;
 }
 

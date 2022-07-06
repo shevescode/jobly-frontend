@@ -1,11 +1,12 @@
 import "./NavBar.css";
 import Button from "./Button.js";
-import  "./Button.css";
+import "./Button.css";
 
 // import logo from "/images/logo.png";
 
 function NavBar() {
     return (
+
         <nav className="navbar navbar-expand-lg ">
             <div className="container-fluid" id="navbar-container">
                 <a className="navbar-brand navbar-option" href="/">
@@ -25,10 +26,9 @@ function NavBar() {
                     </button>
                 </div>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <Button name={"Contact"} class={"nav-button"}/>
-                        <Button name={"About"} class={"nav-button"}/>
-                        <Button name={"Log in"} class={"nav-button"}/>
-
+                    <Button name={"Contact"} class={"nav-button"}/>
+                    <Button name={"About"} class={"nav-button"}/>
+                    <Button name={"Log in"} class={"nav-button"}/>
                 </div>
             </div>
         </nav>

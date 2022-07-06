@@ -4,7 +4,6 @@ import 'primereact/resources/primereact.css';
 import 'primeflex/primeflex.css';
 // import './index.css';
 // import Button from './Button';
-import ReactDOM from 'react-dom';
 
 import React, {useState} from 'react';
 import {useForm, Controller} from 'react-hook-form';
@@ -12,7 +11,6 @@ import {InputText} from 'primereact/inputtext';
 // import {Button} from 'primereact/button';
 import {Button} from 'primereact/button';
 import {Password} from 'primereact/password';
-import {Checkbox} from 'primereact/checkbox';
 import {Dialog} from 'primereact/dialog';
 import {Divider} from 'primereact/divider';
 import {classNames} from 'primereact/utils';
@@ -75,7 +73,7 @@ export const LogInForm = () => {
 
             <div className="flex justify-content-center">
                 <div className="card">
-                    <h5 className="text-center">Register account</h5>
+                    <h5 className="text-center">Log in</h5>
                     <form onSubmit={handleSubmit(onSubmit)} className="p-fluid">
                         <div className="field">
                             <span className="p-float-label p-input-icon-right">
@@ -112,34 +110,10 @@ export const LogInForm = () => {
                             </span>
                             {getFormErrorMessage('password')}
                         </div>
-                        <div className="field">
-                            <span className="p-float-label">
-                                <Controller name="password" control={control}
-                                            rules={{required: 'Confirmation is required.'}}
-                                            render={({field, fieldState}) => (
-                                                <Password id={field.name} {...field} toggleMask
-                                                          className={classNames({'p-invalid': fieldState.error})}
-                                                          header={passwordHeader} footer={passwordFooter}/>
-                                            )}/>
-                                <label htmlFor="password"
-                                       className={classNames({'p-error': errors.confirmPassword})}>Confirm password*</label>
-                            </span>
-                            {getFormErrorMessage('confirmation')}
-                        </div>
-                        <div className="field-checkbox">
-                            <Controller name="accept" control={control} rules={{required: true}}
-                                        render={({field, fieldState}) => (
-                                            <Checkbox inputId={field.name} onChange={(e) => field.onChange(e.checked)}
-                                                      checked={field.value}
-                                                      className={classNames({'p-invalid': fieldState.error})}/>
-                                        )}/>
-                            <label htmlFor="accept" className={classNames({'p-error': errors.accept})}>I agree to the
-                                terms and conditions*</label>
-                        </div>
 
                         {/*<Button name={"Register"} class={"register-button"}/> TODO: CHANGE BUTTON */}
 
-                        <Button type="submit" label="Submit" className="mt-2"/>
+                        <Button type="submit" label="Log in" className="mt-2"/>
                     </form>
                 </div>
             </div>
@@ -147,4 +121,4 @@ export const LogInForm = () => {
     );
 }
 
-const rootElement = document.getElementById("root");
+// const rootElement = document.getElementById("root");
