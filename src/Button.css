@@ -1,5 +1,5 @@
 /*NAVBAR BUTTONS*/
-.nav-button {
+.nav-link {
     padding: 7px 0;
     margin-left: auto;
     width: 100%;
@@ -10,11 +10,11 @@
     font-size: 1.5rem;
 }
 
-.nav-button:hover {
+.nav-link:hover {
     background-color: #1271ED;
 }
 
-.nav-button:nth-child(2n) {
+.nav-link:nth-child(2n) {
     border-left: 2px solid #EEEEEE;
     border-right: 2px solid #EEEEEE;
 }

@@ -1,6 +1,7 @@
 import "./NavBar.css";
 import Button from "./Button.js";
 import "./Button.css";
+import {Link, NavLink} from "react-router-dom"
 
 // import logo from "/images/logo.png";
 
@@ -9,9 +10,9 @@ function NavBar() {
 
         <nav className="navbar navbar-expand-lg ">
             <div className="container-fluid" id="navbar-container">
-                <a className="navbar-brand navbar-option" href="/">
+                <Link to="/" className="navbar-brand navbar-option">
                     <img src="/images/logo.png" alt="Logo" id="logo"/>
-                </a>
+                </Link>
                 <div className="navbar-toggler-container">
                     <button
                         className="navbar-toggler collapse-btn"
@@ -26,9 +27,15 @@ function NavBar() {
                     </button>
                 </div>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <Button name={"Contact"} class={"nav-button"}/>
-                    <Button name={"About"} class={"nav-button"}/>
-                    <Button name={"Log in"} class={"nav-button"}/>
+
+                    <Link to="/contact" class={"nav-link"}>Contact
+
+                    </Link>
+                    <Link to="/about" class={"nav-link"}>
+                        About
+                    </Link>
+                    <Link to="/login" class={"nav-link"}>Log in
+                    </Link>
                 </div>
             </div>
         </nav>
