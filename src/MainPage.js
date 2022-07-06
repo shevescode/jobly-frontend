@@ -11,6 +11,7 @@ function MainPage() {
 
                 </div>
                 <div className="col-4">
+                    {/*TODO: changed nesting in link->button =>! invalid html5 syntax */}
                     <Link to="/create">
                         <Button class={"position-absolute top-50 start-50 translate-middle create-acc-btn"}
                                 name={"Create Account"}
