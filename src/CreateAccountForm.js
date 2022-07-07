@@ -21,30 +21,6 @@ import './CreateAccountForm.css';
 export const CreateAccountForm = () => {
     const [showMessage, setShowMessage] = useState(false);
     const [formData, setFormData] = useState({});
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-
-    let handleSub = async () => {
-        try {
-            let res = await fetch("http://localhost:5000/api/auth/signup", {
-                contentType: "application/json; charset=utf-8",
-                method: "POST",
-                body: JSON.stringify({
-                    email: email,
-                    password: password,
-                })
-            })
-            let resJson = await res.json();
-            if (res.status === 200) {
-                setEmail("");
-                setPassword("");
-            } else {
-
-            }
-        } catch (e) {
-            console.log(e)
-        }
-    }
 
     const defaultValues = {
         email: '',
@@ -57,17 +33,14 @@ export const CreateAccountForm = () => {
     const onSubmit = async (data) => {
         setFormData(data);
         setShowMessage(true);
-        console.log(data);
-        const response = await fetch("http://localhost:5000/api/auth/signup", {
+        await fetch("http://localhost:5000/api/auth/signup", {
             method: "POST",
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify({
-                email: email,
-                password: password,
+                email: data.email,
+                password: data.password,
             })
-        })
-        const datad = await response.json();
-        console.log(datad);
+        });
         reset();
     };
 
