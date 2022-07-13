@@ -28,9 +28,17 @@ export const LogInForm = () => {
 
     const {control, formState: {errors}, handleSubmit, reset} = useForm({defaultValues});
 
-    const onSubmit = (data) => {
+    const onSubmit = async (data) => {
         setFormData(data);
         setShowMessage(true);
+        await fetch("http://localhost:5000/api/auth/signin", {
+            method: "POST",
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                email: data.email,
+                password: data.password,
+            })
+        });
 
         reset();
     };
