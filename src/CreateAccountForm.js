@@ -2,14 +2,9 @@ import 'primeicons/primeicons.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primereact/resources/primereact.css';
 import 'primeflex/primeflex.css';
-// import './index.css';
-// import Button from './Button';
-import ReactDOM from 'react-dom';
-
 import React, {useState} from 'react';
 import {useForm, Controller} from 'react-hook-form';
 import {InputText} from 'primereact/inputtext';
-// import {Button} from 'primereact/button';
 import {Button} from 'primereact/button';
 import {Password} from 'primereact/password';
 import {Checkbox} from 'primereact/checkbox';
@@ -74,8 +69,7 @@ export const CreateAccountForm = () => {
                     <i className="pi pi-check-circle" style={{fontSize: '5rem', color: 'var(--green-500)'}}></i>
                     <h5>Registration Successful!</h5>
                     <p style={{lineHeight: 1.5, textIndent: '1rem'}}>
-                        Your account is registered under name <b>{formData.name}</b> ; it'll be valid next 30 days
-                        without activation. Please check <b>{formData.email}</b> for activation instructions.
+                        Your account has been registered. It'll be valid next 30 days without activation. Please check <b>{formData.email}</b> for activation instructions.
                     </p>
                 </div>
             </Dialog>
@@ -121,12 +115,12 @@ export const CreateAccountForm = () => {
                         </div>
                         <div className="field">
                             <span className="p-float-label">
-                                <Controller name="password" control={control}
+                                <Controller name="password-confirmation" control={control}
                                             rules={{required: 'Confirmation is required.'}}
                                             render={({field, fieldState}) => (
                                                 <Password id={field.name} {...field} toggleMask
                                                           className={classNames({'p-invalid': fieldState.error})}
-                                                          header={passwordHeader} footer={passwordFooter}/>
+                                                          header={passwordHeader}/>
                                             )}/>
                                 <label htmlFor="password"
                                        className={classNames({'p-error': errors.confirmPassword})}>Confirm password*</label>
@@ -144,15 +138,10 @@ export const CreateAccountForm = () => {
                                 terms and conditions*</label>
                         </div>
 
-                        {/*<Button name={"Register"} class={"register-button"}/> TODO: CHANGE BUTTON */}
-
-                        <Button type="submit" label="Submit" className="mt-2"/>
+                        <Button type="submit" label="Create account" className="mt-2 create-acc"/>
                     </form>
                 </div>
             </div>
         </div>
     );
 }
-
-const rootElement = document.getElementById("root");
-// ReactDOM.render(<CreateAccountForm/>, rootElement);
