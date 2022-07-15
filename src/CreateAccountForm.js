@@ -2,7 +2,7 @@ import 'primeicons/primeicons.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primereact/resources/primereact.css';
 import 'primeflex/primeflex.css';
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import {useForm, Controller} from 'react-hook-form';
 import {InputText} from 'primereact/inputtext';
 import {Button} from 'primereact/button';
@@ -22,7 +22,8 @@ export const CreateAccountForm = () => {
         password: '',
         confirmPassword: ''
     }
-
+    const [password, setPassword] = useState('');
+    const [cPassword, setCPassword] = useState('');
     const {control, formState: {errors}, handleSubmit, reset} = useForm({defaultValues});
 
     const onSubmit = async (data) => {
@@ -60,7 +61,11 @@ export const CreateAccountForm = () => {
             </ul>
         </React.Fragment>
     );
-
+    useEffect(() => {
+        if (cPassword !== password) {
+            console.log("g owno");
+            getFormErrorMessage('password')      }
+    }, [cPassword])
     return (
         <div className="create-acc-form">
             <Dialog visible={showMessage} onHide={() => setShowMessage(false)} position="top" footer={dialogFooter}
@@ -106,7 +111,9 @@ export const CreateAccountForm = () => {
                                             render={({field, fieldState}) => (
                                                 <Password id={field.name} {...field} toggleMask
                                                           className={classNames({'p-invalid': fieldState.error})}
-                                                          header={passwordHeader} footer={passwordFooter}/>
+                                                          header={passwordHeader} footer={passwordFooter}
+                                                value={password} onChange={(e) => setPassword(e.target.value)}
+                                                />
                                             )}/>
                                 <label htmlFor="password"
                                        className={classNames({'p-error': errors.password})}>Password*</label>
@@ -120,7 +127,7 @@ export const CreateAccountForm = () => {
                                             render={({field, fieldState}) => (
                                                 <Password id={field.name} {...field} toggleMask
                                                           className={classNames({'p-invalid': fieldState.error})}
-                                                          header={passwordHeader}/>
+                                                          header={passwordHeader} value={cPassword} onChange={(e) => setCPassword(e.target.value)}/>
                                             )}/>
                                 <label htmlFor="password"
                                        className={classNames({'p-error': errors.confirmPassword})}>Confirm password*</label>
