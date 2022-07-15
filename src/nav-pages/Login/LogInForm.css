@@ -20,3 +20,23 @@
     width: 6rem;
     height: 3rem;
 }
+.login-in-text {
+    margin-bottom: 3rem;
+}
+
+@media screen and (min-width: 430px ) and ( max-width: 600px) {
+    .log-in-acc-form{
+        margin-top: 15rem;
+    }
+    .log-in-acc-form .card  {
+        min-width: 30rem;
+    }
+}
+@media screen and (min-width: 300px ) and ( max-width: 429px) {
+    .log-in-acc-form{
+        margin-top: 15rem;
+    }
+    .log-in-acc-form .card {
+        min-width: 24rem;
+    }
+}
