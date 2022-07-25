@@ -1,0 +1,35 @@
+.create-employer-profile {
+    margin-top: 2rem;
+    /*top: 50%;*/
+}
+
+.create-employer-profile .card {
+    position: unset!important;
+    min-width: 40rem;
+    min-height: 30rem;
+    background-color: #EEEEEE;
+    border: none;
+}
+
+.create-employer-profile .card .field {
+    margin-bottom: 1.5rem;
+}
+
+.create-employer,
+.create-employer-btn{
+    margin-bottom: 3rem;
+}
+
+@media screen and (min-width: 430px ) and ( max-width: 600px) {
+
+    .create-employer-profile .card {
+        min-width: 30rem;
+    }
+}
+
+@media screen and (min-width: 300px ) and ( max-width: 429px) {
+
+    .create-employer-profile .card {
+        min-width: 18rem;
+    }
+}

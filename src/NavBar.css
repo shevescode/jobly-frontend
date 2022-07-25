@@ -28,6 +28,7 @@
 
 #navbarSupportedContent {
     width: 30rem;
+    z-index: 5;
 }
 
 /*NAVBAR BUTTONS ON TOP*/

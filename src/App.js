@@ -8,6 +8,7 @@ import {LogInForm} from "./nav-pages/Login/LogInForm";
 import Contact from "./nav-pages/Contact";
 import About from "./nav-pages/About";
 import SelectProfile from "./SelectProfile";
+import {EmployerForm }from "./EmployerForm";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
                         <Route exact path="/about" element={<About/>}></Route>
                         <Route exact path="/login" element={<LogInForm/>}></Route>
                         <Route exact path="/select-profile" element={<SelectProfile/>}></Route>
+                        <Route exact path="/employer" element={<EmployerForm/>}></Route>
                     </Routes>
                 </main>
                 <footer className="App-footer">

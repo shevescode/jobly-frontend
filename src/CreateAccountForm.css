@@ -14,14 +14,14 @@
     margin-bottom: 1.5rem;
 }
 
-#register-button {
-    display: block;
-    margin: 0 auto;
-    width: 6rem;
-    height: 1.5rem;
-    color: #EEEEEE;
-    text-decoration: none;
-}
+/*#register-button {*/
+/*    display: block;*/
+/*    margin: 0 auto;*/
+/*    width: 6rem;*/
+/*    height: 1.5rem;*/
+/*    color: #EEEEEE;*/
+/*    text-decoration: none;*/
+/*}*/
 
 .register-acc {
     margin-bottom: 3rem;

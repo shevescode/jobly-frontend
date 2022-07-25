@@ -6,6 +6,8 @@
     font-size: 1.5rem;
     padding: 12px 20px;
     text-decoration: none;
+    position: relative;
+    top: 45%;
 }
 
 .select-profile-btn:hover {

@@ -21,7 +21,6 @@ export const LogInForm = () => {
     const defaultValues = {
         email: '',
         password: '',
-        confirmPassword: ''
     }
 
     const {control, formState: {errors}, handleSubmit, reset} = useForm({defaultValues});
@@ -116,7 +115,7 @@ export const LogInForm = () => {
                             </span>
                             {getFormErrorMessage('password')}
                         </div>
-                        <Button type="submit" label="Log in" className="mt-2"/>
+                        <Button type="submit" label="Log in" className="mt-2" />
                     </form>
                 </div>
             </div>
