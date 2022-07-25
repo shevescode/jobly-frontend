@@ -30,12 +30,19 @@ export const EmployerForm = () => {
     //     setFormData(data);
     //     setShowMessage(true);
     //
-    //     await fetch("http://localhost:5000/api/auth/signup", {
+    //     await fetch("http://localhost:5000//employer", {
     //         method: "POST",
     //         headers: {'Content-Type': 'application/json'},
     //         body: JSON.stringify({
     //             email: data.email,
-    //             password: data.password,
+    //             companyName: data.companyName,
+    //                 industry: data.industry,
+    //                     position: data.position,
+    //     salary: data.salary,
+    //     location: data.location,
+    //     workingTime: data.workingTime,
+    //     photoSrc: data.photoSrc,
+    //     optionalRequirements: data.requirements
     //         })
     //     });
     //
