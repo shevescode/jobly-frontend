@@ -12,7 +12,6 @@ import {Dialog} from 'primereact/dialog';
 import {Divider} from 'primereact/divider';
 import {classNames} from 'primereact/utils';
 import './CreateAccountForm.css';
-import {Link} from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 
 export const CreateAccountForm = () => {

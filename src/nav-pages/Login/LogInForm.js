@@ -2,21 +2,19 @@ import 'primeicons/primeicons.css';
 import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primereact/resources/primereact.css';
 import 'primeflex/primeflex.css';
-// import './index.css';
-// import Button from './Button';
-
 import React, {useState} from 'react';
 import {useForm, Controller} from 'react-hook-form';
 import {InputText} from 'primereact/inputtext';
-// import {Button} from 'primereact/button';
 import {Button} from 'primereact/button';
 import {Password} from 'primereact/password';
 import {Dialog} from 'primereact/dialog';
 import {Divider} from 'primereact/divider';
 import {classNames} from 'primereact/utils';
 import './LogInForm.css';
+import { useNavigate } from 'react-router-dom';
 
 export const LogInForm = () => {
+    const navigate  = useNavigate();
     const [showMessage, setShowMessage] = useState(false);
     const [formData, setFormData] = useState({});
 
@@ -39,7 +37,9 @@ export const LogInForm = () => {
                 password: data.password,
             })
         });
-
+        setTimeout(function(){
+            navigate("/select-profile");
+        }, 1000);
         reset();
     };
 
