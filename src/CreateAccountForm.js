@@ -12,8 +12,11 @@ import {Dialog} from 'primereact/dialog';
 import {Divider} from 'primereact/divider';
 import {classNames} from 'primereact/utils';
 import './CreateAccountForm.css';
+import {Link} from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 export const CreateAccountForm = () => {
+    const navigate  = useNavigate();
     const [showMessage, setShowMessage] = useState(false);
     const [formData, setFormData] = useState({});
 
@@ -28,14 +31,20 @@ export const CreateAccountForm = () => {
     const onSubmit = async (data) => {
         setFormData(data);
         setShowMessage(true);
+
         await fetch("http://localhost:5000/api/auth/signup", {
             method: "POST",
-            headers: {'Content-Type':'application/json'},
+            headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
                 email: data.email,
                 password: data.password,
             })
         });
+
+        setTimeout(function(){
+            navigate("/login");
+        }, 1000);
+
         reset();
     };
 
@@ -69,7 +78,8 @@ export const CreateAccountForm = () => {
                     <i className="pi pi-check-circle" style={{fontSize: '5rem', color: 'var(--green-500)'}}></i>
                     <h5>Registration Successful!</h5>
                     <p style={{lineHeight: 1.5, textIndent: '1rem'}}>
-                        Your account has been registered. It'll be valid next 30 days without activation. Please check <b>{formData.email}</b> for activation instructions.
+                        Your account has been registered. It'll be valid next 30 days without activation. Please
+                        check <b>{formData.email}</b> for activation instructions.
                     </p>
                 </div>
             </Dialog>
@@ -119,7 +129,7 @@ export const CreateAccountForm = () => {
                                             render={({field, fieldState}) => (
                                                 <Password id={field.name} {...field} toggleMask
                                                           className={classNames({'p-invalid': fieldState.error})}
-                                                          />
+                                                />
                                             )}/>
                                 <label htmlFor="password"
                                        className={classNames({'p-error': errors.confirmPassword})}>Confirm password*</label>
@@ -136,7 +146,6 @@ export const CreateAccountForm = () => {
                             <label htmlFor="accept" className={classNames({'p-error': errors.accept})}>I agree to the
                                 terms and conditions*</label>
                         </div>
-
                         <Button type="submit" label="Create account" className="mt-2 create-acc"/>
                     </form>
                 </div>

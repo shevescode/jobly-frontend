@@ -1,6 +1,6 @@
 .log-in-acc-form {
-    margin-top: 20rem;
-    top: 50%;
+    margin-top: 9rem;
+    /*top: 50%;*/
 }
 
 .log-in-acc-form .card {
@@ -25,7 +25,7 @@
 }
 
 @media screen and (min-width: 430px ) and ( max-width: 600px) {
-    .log-in-acc-form{
+    .log-in-acc-form {
         margin-top: 15rem;
     }
     .log-in-acc-form .card  {

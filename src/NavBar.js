@@ -1,7 +1,5 @@
 import "./NavBar.css";
-import Button from "./Button.js";
-import "./Button.css";
-import {Link, NavLink} from "react-router-dom"
+import {Link} from "react-router-dom"
 
 // import logo from "/images/logo.png";
 
@@ -27,14 +25,14 @@ function NavBar() {
                     </button>
                 </div>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-
-                    <Link to="/contact" class={"nav-link"}>Contact
-
+                    <Link to="/contact" class={"nav-link"}>
+                        Contact
                     </Link>
                     <Link to="/about" class={"nav-link"}>
                         About
                     </Link>
-                    <Link to="/login" class={"nav-link"}>Log in
+                    <Link to="/login" class={"nav-link"}>
+                        Log in
                     </Link>
                 </div>
             </div>

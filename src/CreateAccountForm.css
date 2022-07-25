@@ -1,6 +1,6 @@
 .create-acc-form {
-    margin-top: 20rem;
-    top: 50%;
+    margin-top: 9rem;
+    /*top: 50%;*/
 }
 
 .create-acc-form .card {
@@ -14,11 +14,13 @@
     margin-bottom: 1.5rem;
 }
 
-.register-button {
+#register-button {
     display: block;
     margin: 0 auto;
     width: 6rem;
-    height: 3rem;
+    height: 1.5rem;
+    color: #EEEEEE;
+    text-decoration: none;
 }
 
 .register-acc {

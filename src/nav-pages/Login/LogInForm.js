@@ -71,10 +71,9 @@ export const LogInForm = () => {
                     showHeader={false} breakpoints={{'960px': '80vw'}} style={{width: '30vw'}}>
                 <div className="flex justify-content-center flex-column pt-6 px-3">
                     <i className="pi pi-check-circle" style={{fontSize: '5rem', color: 'var(--green-500)'}}></i>
-                    <h5>Registration Successful!</h5>
+                    <h5>Login Successful!</h5>
                     <p style={{lineHeight: 1.5, textIndent: '1rem'}}>
-                        Your account is registered under name <b>{formData.name}</b> ; it'll be valid next 30 days
-                        without activation. Please check <b>{formData.email}</b> for activation instructions.
+                        Welcome, You're logged in!
                     </p>
                 </div>
             </Dialog>
@@ -105,7 +104,6 @@ export const LogInForm = () => {
                         </div>
                         <div className="field">
                             <span className="p-float-label">
-                                {/*TODO: FIX CONFIRMATION NOT TO BE FULL COMPLETE  TYPING PASSWORD*/}
                                 <Controller name="password" control={control}
                                             rules={{required: 'Password is required.'}}
                                             render={({field, fieldState}) => (

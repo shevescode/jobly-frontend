@@ -29,10 +29,38 @@
 #navbarSupportedContent {
     width: 30rem;
 }
-#navbarSupportedContent:nth-child(2n) {
+
+/*NAVBAR BUTTONS ON TOP*/
+.nav-link {
+    padding: 7px 0;
+    margin-left: auto;
+    width: 100%;
+    text-align: center;
+    background-color: #222222;
+    color: #EEEEEE;
+    border-color: #222222;
+    border-width: 0;
+    font-size: 1.5rem;
+}
+
+.nav-link:nth-child(2n) {
     border-left: 1px solid #EEEEEE;
     border-right: 1px solid #EEEEEE;
 }
+
+.nav-link:hover {
+    background: #6366F1;
+    color: white;
+}
+
 .navbar-collapse {
     flex-grow: 0;
 }
+
+/*NAV BUTTONS - DIFF DEVICES SIZE*/
+@media screen and (max-width: 991px )  {
+    .nav-link:nth-child(2n)  {
+        border: none;
+    }
+}
+

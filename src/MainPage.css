@@ -11,3 +11,19 @@
     height: 750px;
     margin-top: 80px;
 }
+
+/*CREATE ACCOUT BUTTON*/
+.create-acc-btn {
+    background-color: #222222;
+    color: #EEEEEE;
+    border-color: #222222;
+    border-width: 0;
+    font-size: 1.5rem;
+    padding: 12px 20px;
+    text-decoration: none;
+}
+
+.create-acc-btn:hover {
+    color: #EEEEEE;
+    background: #6366F1;
+}
