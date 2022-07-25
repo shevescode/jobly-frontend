@@ -1,5 +1,5 @@
 import "./MainPage.css"
-import NavButton from "./NavButton";
+import {Link, NavLink} from "react-router-dom";
 
 function MainPage() {
     return (
@@ -10,14 +10,16 @@ function MainPage() {
 
                 </div>
                 <div className="col-4">
-                    <NavButton class={"position-absolute top-50 start-50 translate-middle create-acc-btn"} name={"Create Account"} type="submit"/>
+                    <Link to="/create" className={"position-absolute top-50 start-50 translate-middle create-acc-btn"}>
+                        Create Account
+                    </Link>
+
                 </div>
                 <div className="col-4">
                     {/*<img src = "/images/hand.png" id="left-hand"/> TODO: scaling hands*/}
                 </div>
             </div>
-        </div>
-    );
+        </div>);
 }
 
 export default MainPage;

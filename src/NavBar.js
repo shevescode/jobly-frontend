@@ -1,14 +1,16 @@
 import "./NavBar.css";
-import NavButton from "./NavButton.js";
+import {Link} from "react-router-dom"
+
 // import logo from "/images/logo.png";
 
-function Navbar() {
+function NavBar() {
     return (
+
         <nav className="navbar navbar-expand-lg ">
-            <div className="container-fluid">
-                <a className="navbar-brand navbar-option" href="/">
+            <div className="container-fluid" id="navbar-container">
+                <Link to="/" className="navbar-brand navbar-option">
                     <img src="/images/logo.png" alt="Logo" id="logo"/>
-                </a>
+                </Link>
                 <div className="navbar-toggler-container">
                     <button
                         className="navbar-toggler collapse-btn"
@@ -23,13 +25,19 @@ function Navbar() {
                     </button>
                 </div>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <NavButton name={"Contact"}/>
-                    <NavButton name={"About"}/>
-                    <NavButton name={"Log in"}/>
+                    <Link to="/contact" class={"nav-link"}>
+                        Contact
+                    </Link>
+                    <Link to="/about" class={"nav-link"}>
+                        About
+                    </Link>
+                    <Link to="/login" class={"nav-link"}>
+                        Log in
+                    </Link>
                 </div>
             </div>
         </nav>
     );
 }
 
-export default Navbar;
+export default NavBar;

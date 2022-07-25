@@ -1,0 +1,46 @@
+.create-acc-form {
+    margin-top: 9rem;
+    /*top: 50%;*/
+}
+
+.create-acc-form .card {
+    min-width: 40rem;
+    min-height: 30rem;
+    background-color: #EEEEEE;
+    border: none;
+}
+
+.create-acc-form .card .field {
+    margin-bottom: 1.5rem;
+}
+
+#register-button {
+    display: block;
+    margin: 0 auto;
+    width: 6rem;
+    height: 1.5rem;
+    color: #EEEEEE;
+    text-decoration: none;
+}
+
+.register-acc {
+    margin-bottom: 3rem;
+}
+
+@media screen and (min-width: 430px ) and ( max-width: 600px) {
+    .create-acc-form {
+        margin-top: 15rem;
+    }
+    .create-acc-form .card {
+        min-width: 30rem;
+    }
+}
+
+@media screen and (min-width: 300px ) and ( max-width: 429px) {
+    .create-acc-form {
+        margin-top: 15rem;
+    }
+    .create-acc-form .card {
+        min-width: 18rem;
+    }
+}
