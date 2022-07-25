@@ -1,0 +1,14 @@
+.select-profile-btn  {
+    background-color: #222222;
+    color: #EEEEEE;
+    border-color: #222222;
+    border-width: 0;
+    font-size: 1.5rem;
+    padding: 12px 20px;
+    text-decoration: none;
+}
+
+.select-profile-btn:hover {
+    color: #EEEEEE;
+    background: #6366F1;
+}

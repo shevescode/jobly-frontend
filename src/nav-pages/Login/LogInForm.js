@@ -11,10 +11,10 @@ import {Dialog} from 'primereact/dialog';
 import {Divider} from 'primereact/divider';
 import {classNames} from 'primereact/utils';
 import './LogInForm.css';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 export const LogInForm = () => {
-    const navigate  = useNavigate();
+    const navigate = useNavigate();
     const [showMessage, setShowMessage] = useState(false);
     const [formData, setFormData] = useState({});
 
@@ -37,7 +37,7 @@ export const LogInForm = () => {
                 password: data.password,
             })
         });
-        setTimeout(function(){
+        setTimeout(function () {
             navigate("/select-profile");
         }, 1000);
         reset();
@@ -116,9 +116,6 @@ export const LogInForm = () => {
                             </span>
                             {getFormErrorMessage('password')}
                         </div>
-
-                        {/*<Button name={"Register"} class={"register-button"}/> TODO: CHANGE BUTTON */}
-
                         <Button type="submit" label="Log in" className="mt-2"/>
                     </form>
                 </div>
