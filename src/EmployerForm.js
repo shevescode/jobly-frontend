@@ -14,44 +14,48 @@ import {Button} from "primereact/button";
 
 export const EmployerForm = () => {
     const navigate = useNavigate();
-    // const [showMessage, setShowMessage] = useState(false);
+    const [showMessage, setShowMessage] = useState(false);
     // const [formData, setFormData] = useState({});
 
-    const defaultValues = {
-        email: '',
-        password: '',
-        confirmPassword: ''
-    }
+    const {handleSubmit, register, errors, reset} = useForm();
 
+    const onSubmit = async (data) => {
+        console.log(data);
+        // setFormData(data);
+        setShowMessage(true);
 
-    const {control, formState: {errors}, handleSubmit, reset} = useForm({defaultValues});
+        await fetch("http://localhost:5000/employer", {
+            mode: 'no-cors',
+            method: "POST",
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                email: "wiktoria.rajba391@gmail.com",
+                companyName: "wiku",
+                industry: "wiku",
+                position: "wiku",
+                salary: 12,
+                location: "wiku",
+                workingTime: "wiku",
+                photoSrc: "wiku",
+                optionalRequirements: "wiku",
+            })
+        });
 
-    // const onSubmit = async (data) => {
-    //     setFormData(data);
-    //     setShowMessage(true);
-    //
-    //     await fetch("http://localhost:5000//employer", {
-    //         method: "POST",
-    //         headers: {'Content-Type': 'application/json'},
-    //         body: JSON.stringify({
-    //             email: data.email,
-    //             companyName: data.companyName,
-    //                 industry: data.industry,
-    //                     position: data.position,
-    //     salary: data.salary,
-    //     location: data.location,
-    //     workingTime: data.workingTime,
-    //     photoSrc: data.photoSrc,
-    //     optionalRequirements: data.requirements
-    //         })
-    //     });
-    //
-    //     setTimeout(function () {
-    //         navigate("/login");
-    //     }, 1000);
-    //
-    //     reset();
-    // };
+        setTimeout(function () {
+            navigate("/");
+        }, 1000);
+
+        reset();
+        // email: "wiktoria.rajba391@gmail.com",
+        //     companyName: data.companyName,
+        //     industry: data.industry,
+        //     position: data.position,
+        //     salary: data.salary,
+        //     location: data.location,
+        //     workingTime: data.workingTime,
+        //     photoSrc: data.photoSrc,
+        //     optionalRequirements: data.optionalRequirements,
+    };
 
     const [value, setValue] = useState();
 
@@ -61,10 +65,10 @@ export const EmployerForm = () => {
                 <div className="card">
                     <h5 className="text-center create-employer">Complete your Employer profile</h5>
 
-                    <form className="p-fluid">
+                    <form onSubmit={handleSubmit(onSubmit)} className="p-fluid">
                         <div className="field">
                             <span className="p-float-label ">
-                                 <InputText/>
+                                 <InputText name="companyName" itemRef={register}/>
                                 <label htmlFor="companyName" className={"form-field"}>Company name*</label>
                             </span>
                         </div>
@@ -104,8 +108,8 @@ export const EmployerForm = () => {
                         <div className="field">
                             <span className="p-float-label ">
                                  {/*<InputText type={"file"}/>*/}
-                                <label htmlFor="companyName" className={"form-field"}>Workplace photo</label>
-                                <InputText type={"file"} /></span>
+                                <label htmlFor="photoSrc" className={"form-field"}>Workplace photo</label>
+                                <InputText type={"file"}/></span>
                         </div>
                         <div className="field">
                             <span className="p-float-label ">

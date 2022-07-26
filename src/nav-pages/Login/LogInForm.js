@@ -16,7 +16,7 @@ import {useNavigate} from 'react-router-dom';
 export const LogInForm = () => {
     const navigate = useNavigate();
     const [showMessage, setShowMessage] = useState(false);
-    const [formData, setFormData] = useState({});
+    // const [formData, setFormData] = useState({});
 
     const defaultValues = {
         email: '',
@@ -26,7 +26,7 @@ export const LogInForm = () => {
     const {control, formState: {errors}, handleSubmit, reset} = useForm({defaultValues});
 
     const onSubmit = async (data) => {
-        setFormData(data);
+        // setFormData(data);
         setShowMessage(true);
         await fetch("http://localhost:5000/api/auth/signin", {
             method: "POST",
