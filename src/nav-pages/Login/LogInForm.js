@@ -28,9 +28,12 @@ export const LogInForm = () => {
     const onSubmit = async (data) => {
         // setFormData(data);
         setShowMessage(true);
-        await fetch("http://localhost:5000/api/auth/signin", {
+        await fetch("http://localhost:5000/api/auth/login", {
             method: "POST",
-            headers: {'Content-Type': 'application/json'},
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: "include",
             body: JSON.stringify({
                 email: data.email,
                 password: data.password,
@@ -40,6 +43,7 @@ export const LogInForm = () => {
             navigate("/select-profile");
         }, 1000);
         reset();
+
     };
 
     const getFormErrorMessage = (name) => {
@@ -115,7 +119,7 @@ export const LogInForm = () => {
                             </span>
                             {getFormErrorMessage('password')}
                         </div>
-                        <Button type="submit" label="Log in" className="mt-2" />
+                        <Button type="submit" label="Log in" className="mt-2"/>
                     </form>
                 </div>
             </div>

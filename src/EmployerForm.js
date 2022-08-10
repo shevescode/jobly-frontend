@@ -25,9 +25,9 @@ export const EmployerForm = () => {
         setShowMessage(true);
 
         await fetch("http://localhost:5000/employer", {
-            mode: 'no-cors',
             method: "POST",
             headers: {'Content-Type': 'application/json'},
+            credentials: "include",
             body: JSON.stringify({
                 email: "wiktoria.rajba391@gmail.com",
                 companyName: "wiku",
@@ -68,19 +68,19 @@ export const EmployerForm = () => {
                     <form onSubmit={handleSubmit(onSubmit)} className="p-fluid">
                         <div className="field">
                             <span className="p-float-label ">
-                                 <InputText name="companyName" itemRef={register}/>
+                                 <InputText name="companyName" />
                                 <label htmlFor="companyName" className={"form-field"}>Company name*</label>
                             </span>
                         </div>
                         <div className="field">
                             <span className="p-float-label ">
-                                 <InputText/>
+                                 <InputText name="industry"/>
                                 <label htmlFor="companyName" className={"form-field"}>Industry*</label>
                             </span>
                         </div>
                         <div className="field">
                             <span className="p-float-label ">
-                                 <InputText/>
+                                 <InputText name="position"/>
                                 <label htmlFor="companyName" className={"form-field"}>Position*</label>
                             </span>
                         </div>
