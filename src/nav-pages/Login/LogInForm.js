@@ -54,19 +54,7 @@ export const LogInForm = () => {
                                                                               autoFocus
                                                                               onClick={() => setShowMessage(false)}/>
     </div>;
-    const passwordHeader = <h6>Pick a password</h6>;
-    const passwordFooter = (
-        <React.Fragment>
-            <Divider/>
-            <p className="mt-2">Suggestions</p>
-            <ul className="pl-2 ml-2 mt-0" style={{lineHeight: '1.5'}}>
-                <li>At least one lowercase</li>
-                <li>At least one uppercase</li>
-                <li>At least one numeric</li>
-                <li>Minimum 8 characters</li>
-            </ul>
-        </React.Fragment>
-    );
+
 
     return (
         <div className="log-in-acc-form">
@@ -97,7 +85,7 @@ export const LogInForm = () => {
                                                 }
                                             }}
                                             render={({field, fieldState}) => (
-                                                <InputText id={field.name} {...field}
+                                                <InputText id={field.email} {...field}
                                                            className={classNames({'p-invalid': fieldState.error})}/>
                                             )}/>
                                 <label htmlFor="email"
@@ -110,9 +98,9 @@ export const LogInForm = () => {
                                 <Controller name="password" control={control}
                                             rules={{required: 'Password is required.'}}
                                             render={({field, fieldState}) => (
-                                                <Password id={field.name} {...field} toggleMask
+                                                <Password id={field.password} {...field} toggleMask
                                                           className={classNames({'p-invalid': fieldState.error})}
-                                                          header={passwordHeader} footer={passwordFooter}/>
+                                                          />
                                             )}/>
                                 <label htmlFor="password"
                                        className={classNames({'p-error': errors.password})}>Password*</label>

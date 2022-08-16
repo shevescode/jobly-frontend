@@ -99,7 +99,7 @@ export const CreateAccountForm = () => {
                                                 }
                                             }}
                                             render={({field, fieldState}) => (
-                                                <InputText id={field.name} {...field}
+                                                <InputText id={field.password} {...field}
                                                            className={classNames({'p-invalid': fieldState.error})}/>
                                             )}/>
                                 <label htmlFor="email"
@@ -110,9 +110,9 @@ export const CreateAccountForm = () => {
                         <div className="field">
                             <span className="p-float-label">
                                 <Controller name="password" control={control}
-                                            rules={{required: 'Password is required.'}}
+                                            rules={{required: 'Password confirmation is required.'}}
                                             render={({field, fieldState}) => (
-                                                <Password id={field.name} {...field} toggleMask
+                                                <Password id={field.password} {...field} toggleMask
                                                           className={classNames({'p-invalid': fieldState.error})}
                                                           header={passwordHeader} footer={passwordFooter}/>
                                             )}/>
@@ -126,7 +126,7 @@ export const CreateAccountForm = () => {
                                 <Controller name="password-confirmation" control={control}
                                             rules={{required: 'Confirmation is required.'}}
                                             render={({field, fieldState}) => (
-                                                <Password id={field.name} {...field} toggleMask
+                                                <Password id={field.confirmPassword} {...field} toggleMask
                                                           className={classNames({'p-invalid': fieldState.error})}
                                                 />
                                             )}/>

@@ -1,6 +1,6 @@
 import NavBar from "./NavBar";
 import MainPage from "./MainPage";
-import Footer from "./Footer";
+import Footer from "./footer/Footer";
 import "./App.css";
 import {Routes, Route} from "react-router-dom";
 import {CreateAccountForm} from "./CreateAccountForm";
@@ -9,6 +9,7 @@ import Contact from "./nav-pages/Contact";
 import About from "./nav-pages/About";
 import SelectProfile from "./SelectProfile";
 import {EmployerForm }from "./EmployerForm";
+import {CandidateForm} from "./CandidateForm";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
                         <Route exact path="/login" element={<LogInForm/>}></Route>
                         <Route exact path="/select-profile" element={<SelectProfile/>}></Route>
                         <Route exact path="/employer" element={<EmployerForm/>}></Route>
+                        <Route exact path="/candidate" element={<CandidateForm/>}></Route>
                     </Routes>
                 </main>
                 <footer className="App-footer">
