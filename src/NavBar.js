@@ -1,6 +1,6 @@
 import "./NavBar.css";
 import {Link} from "react-router-dom"
-
+import Login from "./Login";
 // import logo from "/images/logo.png";
 
 function NavBar() {
@@ -31,9 +31,10 @@ function NavBar() {
                     <Link to="/about" class={"nav-link"}>
                         About
                     </Link>
-                    <Link to="/login" class={"nav-link"}>
-                        Log in
-                    </Link>
+                    <Login/>
+                    {/*<Link to="/login" class={"nav-link"}>*/}
+                    {/*    Log in*/}
+                    {/*</Link>*/}
                 </div>
             </div>
         </nav>
