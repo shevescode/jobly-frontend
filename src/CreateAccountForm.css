@@ -27,9 +27,9 @@
     margin-bottom: 3rem;
 }
 
-@media screen and (min-width: 430px ) and ( max-width: 600px) {
+@media screen and (min-width: 300px ) and ( max-width: 600px) {
     .create-acc-form {
-        margin-top: 15rem;
+        margin-top: 8rem;
     }
     .create-acc-form .card {
         min-width: 30rem;

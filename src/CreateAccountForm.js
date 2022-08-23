@@ -15,7 +15,7 @@ import {useNavigate} from 'react-router-dom';
 
 export const CreateAccountForm = () => {
     const navigate = useNavigate();
-    const [one, setOne] = useState();
+    const [one, setOne] = useState(null);
     const [showMessage, setShowMessage] = useState(false);
     const [formData, setFormData] = useState({});
     const [error, setError] = useState(null);
@@ -27,7 +27,6 @@ export const CreateAccountForm = () => {
     }
 
     const validate = defaultValues => {
-        setOne(0);
         if (defaultValues.password !== defaultValues.confirmPassword) {
             {
                 console.log('tutaj');
@@ -42,7 +41,6 @@ export const CreateAccountForm = () => {
     const {control, formState: {errors}, handleSubmit, reset} = useForm({defaultValues});
 
     const onSubmit = async (data) => {
-        setOne(0);
         let errorMsg = validate(data)
         if (errorMsg) {
             setError(errorMsg)
@@ -73,6 +71,7 @@ export const CreateAccountForm = () => {
     const getFormErrorMessage = (name) => {
         if (name === "confirmation") {
             return <small className="p-error">{error}</small>
+
         }
         return errors[name] && <small className="p-error">{errors[name].message}</small>
     };
@@ -152,7 +151,7 @@ export const CreateAccountForm = () => {
                                 <Controller name="confirmPassword" control={control}
                                             rules={{required: 'Confirmation is required.'}}
                                             render={({field, fieldState}) => (
-                                                <Password id={field.confirmPassword} feedback={false}  {...field}
+                                                <Password id={field.confirmPassword}   feedback={false}  {...field}
                                                           toggleMask
                                                           className={classNames({'p-invalid': fieldState.error})}
                                                 />

@@ -27,3 +27,9 @@
     color: #EEEEEE;
     background: #6366F1;
 }
+
+@media screen and (min-width: 300px ) and ( max-width: 600px) {
+    .create-acc-btn{
+        text-align: center;
+    }
+}
