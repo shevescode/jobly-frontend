@@ -8,10 +8,10 @@ import {InputText} from 'primereact/inputtext';
 import {Button} from 'primereact/button';
 import {Password} from 'primereact/password';
 import {Dialog} from 'primereact/dialog';
-import {Divider} from 'primereact/divider';
 import {classNames} from 'primereact/utils';
 import './LogInForm.css';
 import {useNavigate} from 'react-router-dom';
+import Header from "../../Header";
 
 export const LogInForm = () => {
     const navigate = useNavigate();
@@ -71,7 +71,7 @@ export const LogInForm = () => {
 
             <div className="flex justify-content-center">
                 <div className="card">
-                    <h5 className="text-center login-in-text">Log in</h5>
+                    <Header headerContent="Log in" className="text-center login-in-text"/>
                     <form onSubmit={handleSubmit(onSubmit)} className="p-fluid">
                         <div className="field">
                             <span className="p-float-label p-input-icon-right">

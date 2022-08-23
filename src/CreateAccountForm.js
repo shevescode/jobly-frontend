@@ -12,6 +12,7 @@ import {Dialog} from 'primereact/dialog';
 import {classNames} from 'primereact/utils';
 import './CreateAccountForm.css';
 import {useNavigate} from 'react-router-dom';
+import Header from "./Header";
 
 export const CreateAccountForm = () => {
     const navigate = useNavigate();
@@ -109,8 +110,7 @@ export const CreateAccountForm = () => {
 
             <div className="flex justify-content-center">
                 <div className="card">
-
-                    <h5 className="text-center register-acc">Register account</h5>
+                    <Header headerContent="Register account" className="text-center register-acc"/>
                     <form onSubmit={handleSubmit(onSubmit)} className="p-fluid">
                         <div className="field">
                             <span className="p-float-label p-input-icon-right">
@@ -151,7 +151,7 @@ export const CreateAccountForm = () => {
                                 <Controller name="confirmPassword" control={control}
                                             rules={{required: 'Confirmation is required.'}}
                                             render={({field, fieldState}) => (
-                                                <Password id={field.confirmPassword}   feedback={false}  {...field}
+                                                <Password id={field.confirmPassword} feedback={false}  {...field}
                                                           toggleMask
                                                           className={classNames({'p-invalid': fieldState.error})}
                                                 />

@@ -11,6 +11,7 @@ import './CreateAccountForm.css';
 import {useNavigate} from 'react-router-dom';
 import {Button} from "primereact/button";
 import {FileUpload} from "primereact/fileupload";
+import Header from "./Header";
 
 export const EmployerForm = () => {
     const toast = useRef(null);
@@ -64,8 +65,7 @@ export const EmployerForm = () => {
         <div className="create-employer-profile">
             <div className="flex justify-content-center">
                 <div className="card">
-                    <h5 className="text-center create-employer">Complete your Employer profile</h5>
-
+                    <Header headerContent="Complete your Employer profile " className="text-center create-employer"/>
                     <form onSubmit={handleSubmit(onSubmit)} className="p-fluid">
                         <div className="field">
                             <span className="p-float-label ">

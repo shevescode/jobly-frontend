@@ -25,10 +25,10 @@ function NavBar() {
                     </button>
                 </div>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <Link to="/contact" class={"nav-link"}>
+                    <Link to="/contact" className={"nav-link"}>
                         Contact
                     </Link>
-                    <Link to="/about" class={"nav-link"}>
+                    <Link to="/about" className={"nav-link"}>
                         About
                     </Link>
                     <Login/>
