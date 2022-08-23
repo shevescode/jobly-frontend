@@ -95,10 +95,10 @@ export const LogInForm = () => {
                         </div>
                         <div className="field">
                             <span className="p-float-label">
-                                <Controller name="password" control={control}
+                                <Controller name="password"  control={control}
                                             rules={{required: 'Password is required.'}}
                                             render={({field, fieldState}) => (
-                                                <Password id={field.password} {...field} toggleMask
+                                                <Password id={field.password} feedback={false} {...field} toggleMask
                                                           className={classNames({'p-invalid': fieldState.error})}
                                                           />
                                             )}/>
