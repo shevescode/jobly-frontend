@@ -3,7 +3,7 @@ import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primereact/resources/primereact.css';
 import 'primeflex/primeflex.css';
 import React, {useState} from 'react';
-import {useForm, Controller} from 'react-hook-form';
+import {useForm, Controller, set} from 'react-hook-form';
 import {InputText} from 'primereact/inputtext';
 import {Button} from 'primereact/button';
 import {Password} from 'primereact/password';
@@ -15,6 +15,7 @@ import {useNavigate} from 'react-router-dom';
 
 export const CreateAccountForm = () => {
     const navigate = useNavigate();
+    const [one, setOne] = useState();
     const [showMessage, setShowMessage] = useState(false);
     const [formData, setFormData] = useState({});
     const [error, setError] = useState(null);
@@ -26,19 +27,30 @@ export const CreateAccountForm = () => {
     }
 
     const validate = defaultValues => {
+        setOne(0);
         if (defaultValues.password !== defaultValues.confirmPassword) {
-            return "Passwords are not the same, try again"
+            {
+                console.log('tutaj');
+                setOne(1);
+                return "Passwords are not the same, try again"
+            }
         }
+
     }
+
+
     const {control, formState: {errors}, handleSubmit, reset} = useForm({defaultValues});
 
     const onSubmit = async (data) => {
+        setOne(0);
         let errorMsg = validate(data)
-        if(errorMsg) {
+        if (errorMsg) {
             setError(errorMsg)
+            console.log(error)
+            // setOne(0);
             return
         }
-
+        console.log(formData);
         setFormData(data);
         setShowMessage(true);
 
@@ -59,8 +71,8 @@ export const CreateAccountForm = () => {
     };
 
     const getFormErrorMessage = (name) => {
-        if(name === "confirmation") {
-            return  <small className="p-error">Passwords are not the same</small>
+        if (name === "confirmation") {
+            return <small className="p-error">{error}</small>
         }
         return errors[name] && <small className="p-error">{errors[name].message}</small>
     };
@@ -140,7 +152,7 @@ export const CreateAccountForm = () => {
                                 <Controller name="confirmPassword" control={control}
                                             rules={{required: 'Confirmation is required.'}}
                                             render={({field, fieldState}) => (
-                                                <Password id={field.confirmPassword} feedback={false} onChange={validate} {...field}
+                                                <Password id={field.confirmPassword} feedback={false}  {...field}
                                                           toggleMask
                                                           className={classNames({'p-invalid': fieldState.error})}
                                                 />
@@ -148,7 +160,8 @@ export const CreateAccountForm = () => {
                                 <label htmlFor="password"
                                        className={classNames({'p-error': errors.confirmPassword})}>Confirm password*</label>
                             </span>
-                            {defaultValues.confirmPassword == defaultValues.password ? getFormErrorMessage('confirmPassword') : getFormErrorMessage('confirmation')}
+                            <p>{one}</p>
+                            {one === 1 ? getFormErrorMessage('confirmation') : getFormErrorMessage('confirmPassword')}
                         </div>
                         <div className="field-checkbox">
                             <Controller name="accept" control={control} rules={{required: true}}
